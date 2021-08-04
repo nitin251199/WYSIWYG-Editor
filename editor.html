@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<style>
+    .root{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .subdiv{
+    width: 600px;
+    height: auto;
+    padding: 20px;
+    align-items: center;
+  }
+  .alignleft{
+  display: flex;
+  justify-content: left;
+}
+.alignright{
+  display: flex;
+  justify-content: right;
+}
+.gap{
+  padding:10px;
+}
+.button{
+  width: 200px;
+  justify-content: center;
+  background-color: #5b9bd5;
+  border: 1px solid blue;
+  padding: 8px;
+  border-radius: 5px;
+  font-size: 25px;
+  color: azure;
+  font-weight: bolder;
+}
+.dropdown{
+  width: 250px;
+  font-size: 25px;
+}
+.table{
+  border-color: #5b9bd5;
+  border-collapse: collapse;
+  text-align: left;
+}
+</style>
+<html>
+<head>
+	<title>WYSIWYG EDITOR</title>
+    <script src="editor.js"></script>
+	<script src="./ckeditor/ckeditor.js"></script>
+</head>
+<body>
+    <div class="root">
+        <div class="subdiv">
+
+              <span class='col'>
+                <select class="dropdown" id="day" class="form-select" >
+                    <option>---</option>
+                    <option >Sunday</option>
+                    <option>Monday</option>
+                    <option>Tuesday</option>
+                    <option>Wednesday</option>
+                    <option>Thursday</option>
+                    <option>Friday</option>
+                    <option>Saturday</option>
+                </select>
+              </span>
+              <span style="margin-left: 95px;">
+                <select class="dropdown" id="topic" class="form-select" onchange="func()">
+                    <option>---</option>
+                    <option>Topic 1</option>
+                    <option>Topic 2</option>
+                    <option>Topic 3</option>
+                    <option>Topic 4</option>
+                    <option>Topic 5</option>
+                    
+                </select>
+              </span><br><br>
+<div class="row">
+<textarea name="editor" id="editor">
+	This is my sample text Area
+</textarea>
+</div><br><br>
+<div style="margin-left: 200px;">
+    <button class="button" type="button" class="btn btn-primary" onclick="submit()">Submit</button>
+</div><br><br>
+<div id="result"></div>
+</div>
+</div>
+   
+<script>
+	CKEDITOR.replace("editor");
+</script>
+</body>
+</html>
